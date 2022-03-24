@@ -1,0 +1,3 @@
+# new-text-manipulation
+
+Atualizando o utilitario feito anterior, ainda em desenvolvimento...
