@@ -21,6 +21,13 @@ namespace Text_Manipulation
         private List<String> arquivo2 = new List<string>();
         private List<String> resultado = new List<string>();
 
+        private const String _INTERSECAO_ = 
+            "https://github.com/senhorbento/new-text-manipulation/blob/master/readme/Conjuntos/intersecao.md";
+        private const String _FILTRO_ = 
+            "https://github.com/senhorbento/new-text-manipulation/blob/master/readme/Conjuntos/filtro.md";
+        private const String _UNIAO_ =
+            "https://github.com/senhorbento/new-text-manipulation/blob/master/readme/Conjuntos/uniao.md";
+
         public void SetFuncao(int v)
         {
             funcao = v;

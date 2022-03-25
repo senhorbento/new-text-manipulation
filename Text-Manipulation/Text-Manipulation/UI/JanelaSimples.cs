@@ -18,6 +18,9 @@ namespace Text_Manipulation
         private int funcao;
         private List<String> arquivo1 = new List<string>();
         private List<String> resultado = new List<string>();
+
+        private const String _WPP_ =
+            "https://github.com/senhorbento/new-text-manipulation/blob/master/readme/Links/wpp.md";
         public JanelaSimples()
         {
             InitializeComponent();
@@ -87,6 +90,19 @@ namespace Text_Manipulation
                     break;
             }
         }
+
+        private void AbrirAjuda()
+        {
+            switch (funcao)
+            {
+                case 10:
+                    Enderecos.AbrirNavegador(_WPP_);
+                    break;
+                default:
+                    break;
+            }
+        }
+
         private void BtAbrir_Click(object sender, EventArgs e)
         {
             if (TxBxLista1.Text.Length > 0)
@@ -136,6 +152,11 @@ namespace Text_Manipulation
             {
                 TxBxLista1.Text = CaminhoArquivoExterno.FileName;
             }
+        }
+
+        private void BtAjuda_Click(object sender, EventArgs e)
+        {
+            AbrirAjuda();
         }
     }
 }

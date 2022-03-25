@@ -13,11 +13,14 @@ namespace Text_Manipulation
     public partial class JanelaLinks : Form
     {
         private static String temp = Path.GetTempPath();
-        private String _CAMINHO_PADRAO_ = Path.Combine(temp + "resultado.txt");
         private String nomeDaFuncao = "Null";
         private int funcao, qtd;
         private List<String> arquivo1 = new List<string>();
-        private List<String> resultado = new List<string>();
+
+        private const String _ABRIR_URLS_ =
+            "https://github.com/senhorbento/new-text-manipulation/blob/master/readme/Links/abrir_links.md";
+        private const String _TESTADOR_ =
+            "https://github.com/senhorbento/new-text-manipulation/blob/master/readme/Links/testar_ips.md";
 
         public JanelaLinks()
         {
@@ -58,6 +61,22 @@ namespace Text_Manipulation
             LbAuxiliar.Text = "";
             LbLista1.Text = "Endereços: ";
             LbTitulo.Text = nomeDaFuncao;
+        }
+
+        private void AbrirAjuda()
+        {
+            switch (funcao)
+            {
+                case 20:
+                    Enderecos.AbrirNavegador(_ABRIR_URLS_);
+                    break;
+                case 21:
+                    Enderecos.AbrirNavegador(_TESTADOR_);
+                    break;
+                default:
+                    nomeDaFuncao = "Null";
+                    break;
+            }
         }
 
         private void LerArquivos()
@@ -106,6 +125,11 @@ namespace Text_Manipulation
             {
                 TxBxLista1.Text = CaminhoArquivoExterno.FileName;
             }
+        }
+
+        private void BtAjuda_Click(object sender, EventArgs e)
+        {
+            AbrirAjuda();
         }
 
         private void BtAbrir_Click(object sender, EventArgs e)

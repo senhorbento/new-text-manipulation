@@ -104,6 +104,7 @@
             this.BtAjuda.TabIndex = 18;
             this.BtAjuda.Text = "Ajuda";
             this.BtAjuda.UseVisualStyleBackColor = true;
+            this.BtAjuda.Click += new System.EventHandler(this.BtAjuda_Click);
             // 
             // JanelaSimples
             // 
