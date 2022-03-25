@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.NetworkInformation;
 
 namespace Text_Manipulation
 {
@@ -13,13 +14,23 @@ namespace Text_Manipulation
             int i = 0;
             foreach(String lines in arquivo1)
             {
-                if(i == qtd)
-                {
-                    i = 0;
-                    //JanelaEspera("Aguardando OK para continuar a execução");
-                }
+                AbrirNavegador(lines);
                 i++;
+                if (i == qtd)
+                {
+                    MessageBox.Show("Deseja continuar a execução?", "Pause", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    i = 0;
+                }
             }
         }
+
+        public static void AbrirNavegador(String link)
+        {
+            System.Diagnostics.Process AbrirNavegador = new System.Diagnostics.Process();
+            AbrirNavegador.StartInfo.UseShellExecute = true;
+            AbrirNavegador.StartInfo.FileName = link;
+            AbrirNavegador.Start();
+        }
+
     }
 }

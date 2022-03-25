@@ -11,6 +11,8 @@ namespace Text_Manipulation
         const int _ABRIR_LINK_ = 20;
         const int _TESTAR_IPS_ = 21;
 
+        const String _GITHUB_  = "https://github.com/senhorbento/text_manipulation";
+
         public JanelaPrincipal()
         {
             InitializeComponent();
@@ -77,10 +79,7 @@ namespace Text_Manipulation
 
         private void BtAjuda_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process AbrirNavegador = new System.Diagnostics.Process();
-            AbrirNavegador.StartInfo.UseShellExecute = true;
-            AbrirNavegador.StartInfo.FileName = "https://github.com/senhorbento/text_manipulation";
-            AbrirNavegador.Start();
+            Enderecos.AbrirNavegador(_GITHUB_);
         } 
     }
 }

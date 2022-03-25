@@ -34,6 +34,11 @@ namespace Text_Manipulation
             qtd = v;
         }
 
+        public void SetLabel(String nome)
+        {
+            LbAuxiliar.Text = nome;
+        }
+
         public void DefinirNomeJanela()
         {
             switch (funcao)
@@ -50,34 +55,9 @@ namespace Text_Manipulation
             }
 
             this.Text = nomeDaFuncao;
+            LbAuxiliar.Text = "";
             LbLista1.Text = "Endereços: ";
             LbTitulo.Text = nomeDaFuncao;
-        }
-
-        private void SalvarArquivoExterno()
-        {
-            SaveFileDialog sfd = new SaveFileDialog();
-
-            sfd.FileName = "resultado";
-            sfd.Filter = "Text (*.txt)|*.txt";
-
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                File.Create(sfd.FileName).Dispose();
-                Arquivo.GravarArquivo(resultado, sfd.FileName);
-                MessageBox.Show("Exportado para " + sfd.FileName + " com sucesso!", "Êxito");
-            }
-            else
-            {
-                MessageBox.Show("Operação cancelada, arquivo não exportado.", "Falha");
-            }
-        }
-
-        private void AbrirArquivoExterno()
-        {
-            File.Create(_CAMINHO_PADRAO_).Dispose();
-            Arquivo.GravarArquivo(resultado, _CAMINHO_PADRAO_);
-            System.Diagnostics.Process.Start("notepad", _CAMINHO_PADRAO_);
         }
 
         private void LerArquivos()
@@ -91,14 +71,44 @@ namespace Text_Manipulation
             {
 
                 case 20:
-                    qtd = -1;
-                    JanelaAuxiliar janela = new JanelaAuxiliar(this);
-                    janela.ShowDialog();
-                    Enderecos.AbrirLinks(arquivo1, qtd);
+                    AbrirJanelaQuantidade();
+                    if(qtd > 0)
+                    {
+                        Enderecos.AbrirLinks(arquivo1, qtd);
+                    }
+                    break;
+                case 21:
+                    AbrirJanelaQuantidade();
+                    if(qtd > 0)
+                    {
+                        Testador.AbrirIp(arquivo1, TxBxLista1.Text, qtd, this);
+                    }
                     break;
                 default:
                     break;
             }
+        }
+
+        private void AbrirJanelaQuantidade()
+        {
+            qtd = -1;
+            JanelaAuxiliar janela = new JanelaAuxiliar(this);
+            janela.ShowDialog();
+        }
+
+        private void BtLista1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog CaminhoArquivoExterno = new OpenFileDialog();
+            if (CaminhoArquivoExterno.ShowDialog() == DialogResult.OK)
+            {
+                TxBxLista1.Text = CaminhoArquivoExterno.FileName;
+            }
+        }
+
+        private void BtAbrir_Click(object sender, EventArgs e)
+        {
+            LerArquivos();
+            ExecutarFuncao();
         }
     }
 }
