@@ -37,8 +37,11 @@
             // 
             // NmBxQtd
             // 
-            this.NmBxQtd.BackColor = System.Drawing.Color.Silver;
-            this.NmBxQtd.Location = new System.Drawing.Point(114, 55);
+            this.NmBxQtd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NmBxQtd.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.NmBxQtd.Location = new System.Drawing.Point(122, 56);
             this.NmBxQtd.Name = "NmBxQtd";
             this.NmBxQtd.Size = new System.Drawing.Size(45, 23);
             this.NmBxQtd.TabIndex = 0;
@@ -59,7 +62,7 @@
             // 
             // BtOk
             // 
-            this.BtOk.Location = new System.Drawing.Point(218, 106);
+            this.BtOk.Location = new System.Drawing.Point(60, 106);
             this.BtOk.Name = "BtOk";
             this.BtOk.Size = new System.Drawing.Size(75, 23);
             this.BtOk.TabIndex = 2;
@@ -69,7 +72,7 @@
             // 
             // BtCancelar
             // 
-            this.BtCancelar.Location = new System.Drawing.Point(137, 106);
+            this.BtCancelar.Location = new System.Drawing.Point(151, 106);
             this.BtCancelar.Name = "BtCancelar";
             this.BtCancelar.Size = new System.Drawing.Size(75, 23);
             this.BtCancelar.TabIndex = 3;
@@ -81,14 +84,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(305, 141);
             this.ControlBox = false;
             this.Controls.Add(this.BtCancelar);
             this.Controls.Add(this.BtOk);
             this.Controls.Add(this.LbPergunta);
             this.Controls.Add(this.NmBxQtd);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "JanelaAuxiliar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Confirmação";

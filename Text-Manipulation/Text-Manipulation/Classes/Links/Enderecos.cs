@@ -10,9 +10,23 @@ namespace Text_Manipulation
 {
     internal class Enderecos
     {
+        public static bool Continuar()
+        {
+            DialogResult result;
+            result = MessageBox.Show("Deseja continuar a execução?", "Pause", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public static void AbrirLinks(List <String> arquivo1, String caminho, int qtd)
         {
-            int i = 0, remove = 0;
+            int i = 0;
             List<String> remover = new List<String>();
             foreach (String lines in arquivo1)
             {
@@ -28,32 +42,17 @@ namespace Text_Manipulation
                     {
                         break;
                     }
+                    remover.Add(lines);
                 }
             }
 
-            if (remove == 1)
+            foreach (String lines in remover)
             {
-                foreach (String lines in remover)
-                {
-                    arquivo1.Remove(lines);
-                }
-                remover.Clear();
-                Arquivo.GravarArquivo(arquivo1, caminho);
+                arquivo1.Remove(lines);
             }
-        }
+            remover.Clear();
+            Arquivo.GravarArquivo(arquivo1, caminho);
 
-        public static bool Continuar()
-        {
-            DialogResult result;
-            result = MessageBox.Show("Deseja continuar a execução?", "Pause", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.No)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
 
         public static void AbrirNavegador(String link)
@@ -66,7 +65,7 @@ namespace Text_Manipulation
 
         public static Match RetornarIP(String linha)
         {
-            Regex rx = new Regex(@"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b");
+            Regex rx = new Regex(@"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}");
             MatchCollection matches = rx.Matches(linha);
             return matches[0];
         }

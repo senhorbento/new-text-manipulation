@@ -34,6 +34,7 @@
             this.BtLista1 = new System.Windows.Forms.Button();
             this.TxBxLista1 = new System.Windows.Forms.TextBox();
             this.LbLista1 = new System.Windows.Forms.Label();
+            this.BtAjuda = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LbTitulo
@@ -95,20 +96,30 @@
             this.LbLista1.TabIndex = 9;
             this.LbLista1.Text = "Arquivo 1:";
             // 
-            // JanelaTerciaria
+            // BtAjuda
+            // 
+            this.BtAjuda.Location = new System.Drawing.Point(19, 252);
+            this.BtAjuda.Name = "BtAjuda";
+            this.BtAjuda.Size = new System.Drawing.Size(75, 23);
+            this.BtAjuda.TabIndex = 18;
+            this.BtAjuda.Text = "Ajuda";
+            this.BtAjuda.UseVisualStyleBackColor = true;
+            // 
+            // JanelaSimples
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(534, 286);
+            this.Controls.Add(this.BtAjuda);
             this.Controls.Add(this.LbTitulo);
             this.Controls.Add(this.BtAbrir);
             this.Controls.Add(this.BtExportar);
             this.Controls.Add(this.BtLista1);
             this.Controls.Add(this.TxBxLista1);
             this.Controls.Add(this.LbLista1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "JanelaTerciaria";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Name = "JanelaSimples";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JanelaTerciaria";
             this.ResumeLayout(false);
@@ -124,5 +135,6 @@
         private Button BtLista1;
         private TextBox TxBxLista1;
         private Label LbLista1;
+        private Button BtAjuda;
     }
 }

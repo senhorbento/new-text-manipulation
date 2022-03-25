@@ -103,6 +103,24 @@ namespace Text_Manipulation
             }
         }
 
+        private void AbrirAjuda()
+        {
+            switch (funcao)
+            {
+                case 1:
+                    Enderecos.AbrirNavegador(_INTERSECAO_);
+                    break;
+                case 2:
+                    Enderecos.AbrirNavegador(_FILTRO_);
+                    break;
+                case 3:
+                    Enderecos.AbrirNavegador(_UNIAO_);
+                    break;
+                default:
+                    break;
+            }
+        }
+
         private void BtLista1_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog CaminhoArquivoExterno = new OpenFileDialog();
@@ -174,6 +192,11 @@ namespace Text_Manipulation
             {
                 MessageBox.Show("Erro desconhecido!", "Erro");
             }
+        }
+
+        private void BtAjuda_Click(object sender, EventArgs e)
+        {
+            AbrirAjuda();
         }
     }
 }

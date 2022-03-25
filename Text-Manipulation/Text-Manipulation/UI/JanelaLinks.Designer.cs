@@ -34,6 +34,7 @@
             this.TxBxLista1 = new System.Windows.Forms.TextBox();
             this.LbLista1 = new System.Windows.Forms.Label();
             this.LbAuxiliar = new System.Windows.Forms.Label();
+            this.BtAjuda = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LbTitulo
@@ -95,18 +96,29 @@
             this.LbAuxiliar.TabIndex = 24;
             this.LbAuxiliar.Text = "label1";
             // 
+            // BtAjuda
+            // 
+            this.BtAjuda.Location = new System.Drawing.Point(19, 251);
+            this.BtAjuda.Name = "BtAjuda";
+            this.BtAjuda.Size = new System.Drawing.Size(75, 23);
+            this.BtAjuda.TabIndex = 25;
+            this.BtAjuda.Text = "Ajuda";
+            this.BtAjuda.UseVisualStyleBackColor = true;
+            // 
             // JanelaLinks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(534, 286);
+            this.Controls.Add(this.BtAjuda);
             this.Controls.Add(this.LbAuxiliar);
             this.Controls.Add(this.LbTitulo);
             this.Controls.Add(this.BtAbrir);
             this.Controls.Add(this.BtLista1);
             this.Controls.Add(this.TxBxLista1);
             this.Controls.Add(this.LbLista1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "JanelaLinks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JanelaLinks";
@@ -124,5 +136,6 @@
         private TextBox TxBxLista1;
         private Label LbLista1;
         private Label LbAuxiliar;
+        private Button BtAjuda;
     }
 }

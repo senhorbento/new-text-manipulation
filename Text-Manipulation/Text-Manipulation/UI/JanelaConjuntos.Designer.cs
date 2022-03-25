@@ -37,6 +37,7 @@
             this.BtExportar = new System.Windows.Forms.Button();
             this.BtAbrir = new System.Windows.Forms.Button();
             this.LbTitulo = new System.Windows.Forms.Label();
+            this.BtAjuda = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LbLista1
@@ -124,12 +125,23 @@
             this.LbTitulo.TabIndex = 8;
             this.LbTitulo.Text = "Titulo";
             // 
-            // JanelaSecundaria
+            // BtAjuda
+            // 
+            this.BtAjuda.Location = new System.Drawing.Point(12, 249);
+            this.BtAjuda.Name = "BtAjuda";
+            this.BtAjuda.Size = new System.Drawing.Size(75, 23);
+            this.BtAjuda.TabIndex = 9;
+            this.BtAjuda.Text = "Ajuda";
+            this.BtAjuda.UseVisualStyleBackColor = true;
+            this.BtAjuda.Click += new System.EventHandler(this.BtAjuda_Click);
+            // 
+            // JanelaConjuntos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(534, 286);
+            this.Controls.Add(this.BtAjuda);
             this.Controls.Add(this.LbTitulo);
             this.Controls.Add(this.BtAbrir);
             this.Controls.Add(this.BtExportar);
@@ -139,9 +151,9 @@
             this.Controls.Add(this.TxBxLista1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.LbLista1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "JanelaSecundaria";
+            this.Name = "JanelaConjuntos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JanelaAção";
             this.ResumeLayout(false);
@@ -160,5 +172,6 @@
         private Button BtExportar;
         private Button BtAbrir;
         private Label LbTitulo;
+        private Button BtAjuda;
     }
 }

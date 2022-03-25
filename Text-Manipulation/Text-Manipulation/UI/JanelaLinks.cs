@@ -75,6 +75,7 @@ namespace Text_Manipulation
                     if(qtd > 0)
                     {
                         Enderecos.AbrirLinks(arquivo1, TxBxLista1.Text, qtd);
+                        MessageBox.Show("Lista finalizada", "Sucesso!");
                     }
                     break;
                 case 21:

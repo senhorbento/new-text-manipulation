@@ -121,7 +121,7 @@
             this.BtIpTester.Name = "BtIpTester";
             this.BtIpTester.Size = new System.Drawing.Size(75, 23);
             this.BtIpTester.TabIndex = 7;
-            this.BtIpTester.Text = "Testador";
+            this.BtIpTester.Text = "Testar IPs";
             this.BtIpTester.UseVisualStyleBackColor = true;
             this.BtIpTester.Click += new System.EventHandler(this.BtIpTester_Click);
             // 
@@ -145,10 +145,10 @@
             // 
             // JanelaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(234, 261);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(230, 257);
             this.ControlBox = false;
             this.Controls.Add(this.LbLinks);
             this.Controls.Add(this.LbConjuntos);
@@ -161,7 +161,7 @@
             this.Controls.Add(this.BtFiltro);
             this.Controls.Add(this.BtIntersecao);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MdiChildrenMinimizedAnchorBottom = false;
