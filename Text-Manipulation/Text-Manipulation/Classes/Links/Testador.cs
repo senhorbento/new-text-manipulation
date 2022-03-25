@@ -30,6 +30,7 @@ namespace Text_Manipulation
         {
             int i = 0, qtdLista = -1, remove = 0;
             const String prefix = "http://";
+            String ip;
             List<String> remover = new List<String>();
 
             while(qtdLista != 0) 
@@ -38,10 +39,11 @@ namespace Text_Manipulation
                 foreach (String lines in arquivo1)
                 {
                     qtdLista++;
-                    janela.SetLabel("Testando o ip: " + lines);
-                    if (Estado(lines))
+                    ip = Enderecos.RetornarIP(lines).ToString();
+                    janela.SetLabel("Testando o ip: " + ip);
+                    if (Estado(ip))
                     {
-                        String abrir = prefix + lines;
+                        String abrir = prefix + ip;
                         Enderecos.AbrirNavegador(abrir);
                         remover.Add(lines);
                         remove = 1;
@@ -50,8 +52,14 @@ namespace Text_Manipulation
                     }                
                     if (i == repeticao)
                     {
-                        MessageBox.Show("Deseja continuar a execução?", "Pause", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        i = 0;
+                        if(Enderecos.Continuar()){
+                            i = 0;
+                        }
+                        else
+                        {
+                            qtdLista = 0;
+                            break;
+                        }
                     }
                 }
 
@@ -70,8 +78,6 @@ namespace Text_Manipulation
                     qtdLista = -1;
                 }                
             }
-            janela.SetLabel("");
-            MessageBox.Show("Lista finalizada", "Sucesso!");
         }
 
     }

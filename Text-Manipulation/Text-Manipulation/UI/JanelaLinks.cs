@@ -74,7 +74,7 @@ namespace Text_Manipulation
                     AbrirJanelaQuantidade();
                     if(qtd > 0)
                     {
-                        Enderecos.AbrirLinks(arquivo1, qtd);
+                        Enderecos.AbrirLinks(arquivo1, TxBxLista1.Text, qtd);
                     }
                     break;
                 case 21:
@@ -82,6 +82,8 @@ namespace Text_Manipulation
                     if(qtd > 0)
                     {
                         Testador.AbrirIp(arquivo1, TxBxLista1.Text, qtd, this);
+                        SetLabel("");
+                        MessageBox.Show("Lista finalizada", "Sucesso!");
                     }
                     break;
                 default:
