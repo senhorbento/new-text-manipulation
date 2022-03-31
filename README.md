@@ -2,7 +2,7 @@
 
 ### Sobre / About
 
-Atualizando o utilitário feito anteriormente, ainda em desenvolvimento...
+Atualizando o utilitário feito anteriormente, ainda em desenvolvimento...  
 
 <details>
   <summary>Requisitos / Requirements</summary>
@@ -10,6 +10,9 @@ Atualizando o utilitário feito anteriormente, ainda em desenvolvimento...
 - <a href=https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-web-installer>.NET 4.8</a> 
   
 </details>
+
+#
+### Funções / *Functions*
 
 <details>
   <summary>Operações com conjuntos / Operations with sets</summary>
