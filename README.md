@@ -1,5 +1,5 @@
 # new-text-manipulation
 
-Requisitos: <a href=https://dotnet.microsoft.com/en-us/download/dotnet/6.0>.NET 6.0.3</a> 
+Requisitos: <a href=https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-web-installer>.NET 4.8</a> 
 
 Atualizando o utilitario feito anteriormente, ainda em desenvolvimento...

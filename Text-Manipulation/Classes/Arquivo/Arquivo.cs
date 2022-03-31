@@ -73,8 +73,7 @@ namespace Text_Manipulation.Classes.Arquivo
                 MessageBox.Show("O Formato " + arquivo[1] + " não é suportado, apenas txt é suportado", "Erro");
                 return false;
             }
-            else
-            {
+            else { 
                 return true;
             }
         }
@@ -86,14 +85,11 @@ namespace Text_Manipulation.Classes.Arquivo
                 MessageBox.Show("Não foi possível localizar um arquivo, favor inserir novamente!", "Falha");
                 return false;
             }
-            else if (Arquivo.VerificarExtensao(caminho))
-            {
-                return true;
-            }
-            else
+            if (!Arquivo.VerificarExtensao(caminho))
             {
                 return false;
-            }            
+            }
+            return true;           
         }
 
     }
