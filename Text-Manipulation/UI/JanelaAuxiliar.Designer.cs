@@ -74,9 +74,24 @@
             // NmBxQtd
             // 
             this.NmBxQtd.Location = new System.Drawing.Point(141, 63);
+            this.NmBxQtd.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.NmBxQtd.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.NmBxQtd.Name = "NmBxQtd";
             this.NmBxQtd.Size = new System.Drawing.Size(46, 20);
             this.NmBxQtd.TabIndex = 3;
+            this.NmBxQtd.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // JanelaAuxiliar
             // 

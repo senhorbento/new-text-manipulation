@@ -89,7 +89,7 @@ namespace Text_Manipulation.UI
         private void AbrirJanelaQuantidade()
         {
             qtd = -1;
-            JanelaAuxiliar janela = new JanelaAuxiliar(this);
+            JanelaAuxiliar janela = new JanelaAuxiliar(this, arquivo1.Count);
             janela.ShowDialog();
         }
 

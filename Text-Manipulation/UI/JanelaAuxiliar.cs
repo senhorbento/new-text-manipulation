@@ -12,22 +12,33 @@ namespace Text_Manipulation.UI
 {
     public partial class JanelaAuxiliar : Form
     {
-        JanelaLinks JT = new JanelaLinks();
+        private JanelaLinks JT = new JanelaLinks();
+        private int quantidadeMaxima;
+
         public JanelaAuxiliar()
         {
             InitializeComponent();
         }
 
-        public JanelaAuxiliar(JanelaLinks janela)
+        public JanelaAuxiliar(JanelaLinks janela, int qtd)
         {
             InitializeComponent();
             JT = janela;
+            quantidadeMaxima = qtd;
         }
 
         private void BtContinuar_Click(object sender, EventArgs e)
         {
-            JT.SetQuantidade(int.Parse(NmBxQtd.Text));
-            this.Close();
+            int quantidadeEscolhida = int.Parse(NmBxQtd.Text);
+            if (quantidadeEscolhida <= quantidadeMaxima) { 
+                JT.SetQuantidade(quantidadeEscolhida);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Quantidade maior que o tamanho da lista, favor inserir uma quantidade menor",
+                "Erro!", MessageBoxButtons.OK);
+            }
         }
 
         private void BtCancelar_Click(object sender, EventArgs e)

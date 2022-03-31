@@ -64,18 +64,16 @@ namespace Text_Manipulation.Classes.Arquivo
 
         private static bool VerificarExtensao(String caminho)
         {
-            int len;
             String[] arquivo;
-            len = caminho.Length;
             arquivo = caminho.Split('.');
-            if (arquivo[1] != "txt")
+
+            if (arquivo[arquivo.Length - 1] != "txt")
             {
                 MessageBox.Show("O Formato " + arquivo[1] + " não é suportado, apenas txt é suportado", "Erro");
                 return false;
             }
-            else { 
-                return true;
-            }
+
+            return true;
         }
 
         public static bool VerificarArquivo(String caminho)
@@ -85,11 +83,8 @@ namespace Text_Manipulation.Classes.Arquivo
                 MessageBox.Show("Não foi possível localizar um arquivo, favor inserir novamente!", "Falha");
                 return false;
             }
-            if (!Arquivo.VerificarExtensao(caminho))
-            {
-                return false;
-            }
-            return true;           
+
+            return Arquivo.VerificarExtensao(caminho);           
         }
 
     }
