@@ -87,5 +87,15 @@ namespace Text_Manipulation.Classes.Arquivo
             return Arquivo.VerificarExtensao(caminho);           
         }
 
+        public static void AtualizarArquivo(List<String> lista, List<String> remover, String caminho)
+        {
+            foreach (String lines in remover)
+            {
+                lista.Remove(lines);
+            }
+            remover.Clear();
+            EscreverArquivo(lista, caminho);
+        }
+
     }
 }

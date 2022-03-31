@@ -14,23 +14,22 @@ namespace Text_Manipulation.Classes.Links
         {
             DialogResult result;
             result = MessageBox.Show("Deseja continuar a execução?", "Pause", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.No)
-            {
-                return false;
-            }
-            else
+            if (result == DialogResult.Yes)
             {
                 return true;
             }
+            return false;
         }
 
         public static void AbrirLinks(List<String> arquivo1, String caminho, int qtd)
         {
             int i = 0;
             List<String> remover = new List<String>();
+
             foreach (String lines in arquivo1)
             {
                 AbrirNavegador(lines);
+                remover.Add(lines);
                 i++;
                 if (i == qtd)
                 {
@@ -41,18 +40,10 @@ namespace Text_Manipulation.Classes.Links
                     else
                     {
                         break;
-                    }
-                    remover.Add(lines);
+                    } 
                 }
             }
-
-            foreach (String lines in remover)
-            {
-                arquivo1.Remove(lines);
-            }
-            remover.Clear();
-            Arquivo.Arquivo.EscreverArquivo(arquivo1, caminho);
-
+            Arquivo.Arquivo.AtualizarArquivo(arquivo1, remover, caminho);
         }
 
         public static void AbrirNavegador(String link)
@@ -63,11 +54,11 @@ namespace Text_Manipulation.Classes.Links
             AbrirNavegador.Start();
         }
 
-        public static Match RetornarIP(String linha)
+        public static String RetornarIP(String linha)
         {
             Regex rx = new Regex(@"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}");
             MatchCollection matches = rx.Matches(linha);
-            return matches[0];
+            return matches[0].ToString();
         }
     }
 }

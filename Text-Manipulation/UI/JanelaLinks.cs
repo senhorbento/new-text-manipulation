@@ -97,25 +97,25 @@ namespace Text_Manipulation.UI
         {
             SetCaminho();
             AbrirJanelaQuantidade();
-            switch (funcao)
-            {
-
-                case 20:
-                    if (qtd > 0)
-                    {
+            if(qtd > 0) 
+            { 
+                switch (funcao)
+                {
+                    case 20:
                         Enderecos.AbrirLinks(arquivo1, caminho, qtd);
-                        MessageBox.Show("Lista finalizada", "Sucesso!");
-                    }
-                    break;
-                case 21:
-                    if (qtd > 0)
-                    {
+                        MessageBox.Show("Execução finalizada!", "Sucesso!");
+                        break;
+                    case 21:
                         Testador.TestarIps(arquivo1, caminho, qtd, this);
-                        MessageBox.Show("Lista finalizada", "Sucesso!");
-                    }
-                    break;
-                default:
-                    break;
+                        MessageBox.Show("Execução finalizada!", "Sucesso!");
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Quantidade não selecionada!", "Falha");
             }
         }
 

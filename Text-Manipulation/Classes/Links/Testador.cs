@@ -13,23 +13,14 @@ namespace Text_Manipulation.Classes.Links
     {
         private static bool Estado(String ip)
         {
-            bool retorno = false;
-            Task t = Task.Factory.StartNew(() => {
+            Ping ping = new Ping();
+            PingReply reply = ping.Send(ip, 500);
 
-                Ping ping = new Ping();
-                PingReply reply = ping.Send(ip, 500);
-
-                if (reply.Status == 0)
-                {
-                    retorno = true;
-                }
-                else
-                {
-                    retorno = false;
-                }
-            });
-            t.Wait();
-            return retorno;
+            if (reply.Status == 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public static void TestarIps(List<String> arquivo1, String caminho, int repeticao, JanelaLinks janela)
@@ -45,19 +36,22 @@ namespace Text_Manipulation.Classes.Links
                 foreach (String lines in arquivo1)
                 {
                     qtdLista++;
-                    ip = Enderecos.RetornarIP(lines).ToString();
+                    ip = Enderecos.RetornarIP(lines);
 
                     janela.SetLabel("Testando o ip: " + ip);
 
-                    if (Estado(ip))
-                    {
-                        String abrir = prefix + ip;
-                        Enderecos.AbrirNavegador(abrir);
-                        remover.Add(lines);
-                        remove = 1;
-                        i++;
-                        qtdLista--;
-                    }
+                    Task t = Task.Factory.StartNew(() => {
+                        if (Estado(ip))
+                        {
+                            String abrir = prefix + ip;
+                            Enderecos.AbrirNavegador(abrir);
+                            remover.Add(lines);
+                            remove = 1;
+                            i++;
+                            qtdLista--;
+                        }
+                    });
+                    t.Wait(1000);
 
                     if (i == repeticao)
                     {
@@ -75,12 +69,7 @@ namespace Text_Manipulation.Classes.Links
 
                 if (remove == 1)
                 {
-                    foreach (String lines in remover)
-                    {
-                        arquivo1.Remove(lines);
-                    }
-                    remover.Clear();
-                    Arquivo.Arquivo.EscreverArquivo(arquivo1, caminho);
+                    Arquivo.Arquivo.AtualizarArquivo(arquivo1, remover, caminho);
                 }
 
                 if (qtdLista > 0)
@@ -88,6 +77,7 @@ namespace Text_Manipulation.Classes.Links
                     qtdLista = -1;
                 }
             }
+            janela.SetLabel("");
         }
     }
 }
