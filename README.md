@@ -12,7 +12,7 @@ Atualizando o utilitário feito anteriormente, ainda em desenvolvimento...
 </details>
 
 <details>
-  <summary>Operações com conjuntos / Operations with </summary>
+  <summary>Operações com conjuntos / Operations with sets</summary>
 
 - <a href=https://github.com/senhorbento/new-text-manipulation/blob/master/readme/Conjuntos/intersecao.md>Interseção / Intersection</a>
 - <a href=https://github.com/senhorbento/new-text-manipulation/blob/master/readme/Conjuntos/filtro.md>Filtro / Filter</a>
