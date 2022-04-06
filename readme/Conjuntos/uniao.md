@@ -20,8 +20,6 @@ Se você clicar em "Exportar" aparecerá uma nova janela para você indicar onde
   <summary> EN </summary>
 
 - In the application it's necessary insert the paths of the lists or find the archives using the 3 dots buttons, example of list below;  
-- The program just verify one ip per line;
-- The ip can be in any position of the line, the application will find it.
 
 After select or indicate the list, if you click the "Abrir" button, the application will open the result without save it.  
 If you click in the "Exportar" button one window will ask you where you want to save the file.  
