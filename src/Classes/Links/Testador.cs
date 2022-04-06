@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Text_Manipulation.UI;
 using Text_Manipulation.Classes.Arquivo;
+using System.Windows.Forms;
 
 namespace Text_Manipulation.Classes.Links
 {
@@ -14,7 +15,7 @@ namespace Text_Manipulation.Classes.Links
         private static bool Estado(String ip)
         {
             Ping ping = new Ping();
-            PingReply reply = ping.Send(ip, 500);
+            PingReply reply = ping.Send(ip, 250);
 
             if (reply.Status == 0)
             {
@@ -40,18 +41,15 @@ namespace Text_Manipulation.Classes.Links
 
                     janela.SetLabel("Testando o ip: " + ip);
 
-                    Task t = Task.Factory.StartNew(() => {
-                        if (Estado(ip))
-                        {
-                            String abrir = prefix + ip;
-                            Enderecos.AbrirNavegador(abrir);
-                            remover.Add(lines);
-                            remove = 1;
-                            i++;
-                            qtdLista--;
-                        }
-                    });
-                    t.Wait(1000);
+                    if (Estado(ip))
+                    {
+                        String abrir = prefix + ip;
+                        Enderecos.AbrirNavegador(abrir);
+                        remover.Add(lines);
+                        remove = 1;
+                        i++;
+                        qtdLista--;
+                    }
 
                     if (i == repeticao)
                     {
@@ -76,8 +74,11 @@ namespace Text_Manipulation.Classes.Links
                 {
                     qtdLista = -1;
                 }
+                if (qtdLista == 0)
+                {
+                    MessageBox.Show("Programa finalizado", "Sucesso!");
+                }
             }
-            janela.SetLabel("");
         }
     }
 }

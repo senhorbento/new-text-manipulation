@@ -40,9 +40,18 @@ namespace Text_Manipulation.UI
             qtd = v;
         }
 
+        delegate void SetTextCallback(string v);
         public void SetLabel(String v)
         {
-            LbEnderecos.Text = v;
+            if (this.LbEnderecos.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetLabel);
+                this.Invoke(d, new object[]{v});
+            }
+            else
+            {
+                LbEnderecos.Text = v;
+            }
         }
 
         private void SetCaminho()
@@ -106,8 +115,11 @@ namespace Text_Manipulation.UI
                         MessageBox.Show("Execução finalizada!", "Sucesso!");
                         break;
                     case 21:
-                        Testador.TestarIps(arquivo1, caminho, qtd, this);
-                        MessageBox.Show("Execução finalizada!", "Sucesso!");
+                        Task t = Task.Factory.StartNew(() =>
+                        {
+                            Testador.TestarIps(arquivo1, caminho, qtd, this);
+                            SetLabel("");
+                        });
                         break;
                     default:
                         break;
