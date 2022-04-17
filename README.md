@@ -2,7 +2,7 @@
 
 ### Sobre / About
 
-Atualizando o utilitário feito anteriormente, ainda em desenvolvimento...  
+O projeto tem como intuito complementar o que estou aprendendo na faculdade, basicamente é a junção de vários projetos menores que desenvolvi anteriormente.
 
 <details>
   <summary>Requisitos / Requirements</summary>
